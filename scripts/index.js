@@ -9,11 +9,11 @@ myBurger.addEventListener('click', handleBurgerClick);
 const preventScroll = (e) => {
 	e.preventDefault();
 	e.stopPropagation();
-
 	return false;
 };
 
-overlay.addEventListener('wheel', preventScroll, { passive: false });
+overlay.addEventListener('wheel', (e) => preventScroll(e));
+overlay.addEventListener('touchmove', (e) => preventScroll(e));
 
 const swiper = new Swiper('.swiper', {
 	loop: true,
