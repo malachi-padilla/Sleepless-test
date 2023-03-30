@@ -22,13 +22,6 @@ const swiper = new Swiper('.swiper', {
 	},
 });
 
-const gallery = new Swiper('#mobile-gall', {
-	loop: true,
-	spaceBetween: 30,
-	lazyLoading: true,
-	slidesPerView: 'auto',
-});
-
 const carousel = document.getElementById('carousel');
 const nextButton = document.querySelector("[data-action='slideRight']");
 
