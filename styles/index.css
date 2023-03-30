@@ -380,6 +380,7 @@ a {
 	display: flex;
 	justify-content: center;
 	padding-top: 6rem;
+	position: relative;
 }
 
 .inner-col {
@@ -422,7 +423,13 @@ a {
 	height: 560px;
 	width: 100%;
 	position: relative;
-	overflow: hidden;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	scroll-behavior: smooth;
+}
+
+.carousel-wrap::-webkit-scrollbar {
+	display: none;
 }
 
 .carousel {
@@ -468,8 +475,8 @@ a {
 
 .button-wrapper {
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 20rem;
+	right: 5rem;
 	height: 28rem;
 	width: fit-content;
 	display: flex;

@@ -29,42 +29,13 @@ const gallery = new Swiper('#mobile-gall', {
 	slidesPerView: 'auto',
 });
 
-const carousel = document.querySelector("[data-target='carousel']");
-const carouselItem = carousel.querySelector("[data-target='carousel-item']");
-const rightButton = document.querySelector("[data-action='slideRight']");
+const carousel = document.getElementById('carousel');
+const nextButton = document.querySelector("[data-action='slideRight']");
 
-const carouselWidth = carousel.offsetWidth;
-const cardStyle = carouselItem.currentStyle || window.getComputedStyle(carouselItem);
-const cardMarginRight = Number(cardStyle.marginRight.match(/\d+/g)[0]);
-
-const cardCount = carousel.querySelectorAll("[data-target='carousel-item']").length;
-
-let maxX = -310;
-
-const handleMaxClick = () => {
-	if (window.innerWidth > 1024) {
-		maxX = -310;
-	} else if (window.innerWidth >= 768) {
-		maxX = -310 * 4;
-	} else {
-		null;
-	}
-};
-
-window.addEventListener('resize', handleMaxClick);
-
-let offset = 0;
-
-rightButton.addEventListener('click', function () {
-	const transFormAmount = 310;
-	console.log(offset);
-	if (offset !== maxX) {
-		offset -= transFormAmount;
-		carousel.style.transform = `translateX(${offset}px)`;
-	} else {
-		carousel.style.transform = `translateX(${-offset - transFormAmount}px)`;
-	}
+nextButton.addEventListener('click', () => {
+	carousel.scrollBy(620, 0);
 });
+
 const getYear = () => {
 	return new Date().getFullYear();
 };
