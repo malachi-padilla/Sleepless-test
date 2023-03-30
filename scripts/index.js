@@ -39,15 +39,30 @@ const cardMarginRight = Number(cardStyle.marginRight.match(/\d+/g)[0]);
 
 const cardCount = carousel.querySelectorAll("[data-target='carousel-item']").length;
 
+let maxX = -310;
+
+const handleMaxClick = () => {
+	if (window.innerWidth > 1024) {
+		maxX = -310;
+	} else if (window.innerWidth >= 768) {
+		maxX = -310 * 4;
+	} else {
+		null;
+	}
+};
+
+window.addEventListener('resize', handleMaxClick);
+
 let offset = 0;
-// const maxX = -((cardCount / 3) * carouselWidth + cardMarginRight * (cardCount / 3) - carouselWidth - cardMarginRight);
-const maxOffset = 0;
 
 rightButton.addEventListener('click', function () {
+	const transFormAmount = 310;
 	console.log(offset);
-	if (offset !== maxOffset) {
-		offset -= carouselWidth + cardMarginRight;
+	if (offset !== maxX) {
+		offset -= transFormAmount;
 		carousel.style.transform = `translateX(${offset}px)`;
+	} else {
+		carousel.style.transform = `translateX(${-offset - transFormAmount}px)`;
 	}
 });
 const getYear = () => {

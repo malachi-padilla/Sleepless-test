@@ -8,10 +8,7 @@
 	margin: 0;
 	padding: 0;
 }
-html,
-body {
-	height: 100%;
-}
+
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
@@ -224,10 +221,6 @@ a {
 	overflow: hidden;
 	transition: all 250ms;
 	background-color: #355556;
-}
-
-#mobile-menu.overlay {
-	display: block;
 }
 
 .mobile-links {
@@ -758,6 +751,9 @@ a {
 	}
 	.footer-right {
 		width: 100%;
+	}
+	#mobile-menu.overlay {
+		display: block;
 	}
 }
 
