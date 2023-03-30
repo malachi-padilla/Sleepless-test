@@ -199,16 +199,13 @@ a {
 }
 
 .burger-menu div:nth-of-type(2) {
-	width: 8rem;
+	width: 4rem;
 }
 .close div:nth-of-type(2) {
 	width: 0;
 	opacity: 0;
 }
 
-.burger-menu div:last-of-type {
-	width: 6rem;
-}
 .close div:last-of-type {
 	width: 5rem;
 	transform: rotate(-45deg);
@@ -427,6 +424,7 @@ a {
 	text-align: center;
 	padding-bottom: 1.5rem;
 	width: 28rem;
+	text-transform: capitalize;
 }
 
 .carousel-wrap {
